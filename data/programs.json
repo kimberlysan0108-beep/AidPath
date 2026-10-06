@@ -1,0 +1,686 @@
+[
+  {
+    "id": "pantry",
+    "name": "Basic Needs Food Pantry",
+    "category": [
+      "food"
+    ],
+    "summary": "Free groceries for short-term food needs.",
+    "source_url": "https://basicneeds.berkeley.edu/pantry",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Check current pantry hours and complete the student profile form linked on the official page.",
+      "Join the virtual line, or ask for help at the check-in table.",
+      "Bring your Cal ID or number and a bag."
+    ],
+    "documents": [
+      "Cal ID or Cal ID number"
+    ],
+    "caveat": "Visits are limited to once per week. Hours and closures can change.",
+    "priority": 9,
+    "urgent": true,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "a6c29ae912048bdd55e45f174e05dbb6528d0dccb6b09ab02af31b7b1ebd39e1",
+    "retrieved_at": "2026-10-01T22:15:04.461485+00:00"
+  },
+  {
+    "id": "calfresh",
+    "name": "CalFresh application assistance",
+    "category": [
+      "food"
+    ],
+    "summary": "Help exploring ongoing food benefits and applying.",
+    "source_url": "https://basicneeds.berkeley.edu/calfresh",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review the official eligibility guidance and prescreener.",
+      "Book application help with a CalFresh ambassador.",
+      "Use the official application guide to prepare documents."
+    ],
+    "documents": [],
+    "caveat": "AidPath recommends application assistance, not CalFresh eligibility. Additional income, student, and status rules apply.",
+    "priority": 7,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "eb7451084fd865a98370f4a90fec08acf3181c4928ca28b3a52f956dbfa0344e",
+    "retrieved_at": "2026-10-01T22:15:04.472970+00:00"
+  },
+  {
+    "id": "meals",
+    "name": "Grab n Go meals",
+    "category": [
+      "food"
+    ],
+    "summary": "Prepared recovered meals when donations are available.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/food/food-recovery",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Check today\u2019s availability and access details on the official page.",
+      "Visit the Welcome Center or an eligible partner space."
+    ],
+    "documents": [],
+    "caveat": "Meal availability and variety are not guaranteed.",
+    "priority": 8,
+    "urgent": true,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "ece5af2519453916b8ee4d74c29ca7ded97d71b74449b0db8033475e1985fdb9",
+    "retrieved_at": "2026-10-01T22:15:04.459844+00:00"
+  },
+  {
+    "id": "emergency-housing",
+    "name": "Emergency housing",
+    "category": [
+      "housing"
+    ],
+    "summary": "Short-term help for students without safe housing.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/housing/emergency-housing",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "housing_type",
+        "operator": "equals",
+        "value": "unsafe",
+        "required": true,
+        "label": "No safe housing or imminent housing loss",
+        "kind": "routing"
+      },
+      {
+        "field": "unexpected",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Unplanned housing emergency",
+        "kind": "policy"
+      },
+      {
+        "field": "exhausted",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "No resources for alternative housing",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Open the official page and complete the assistance form.",
+      "Explain your housing urgency directly to the Basic Needs team.",
+      "If the office is closed, use the after-hours resources on that page."
+    ],
+    "documents": [],
+    "caveat": "Extremely limited availability. Planned gap housing is excluded. The program is not a 24-hour service.",
+    "priority": 10,
+    "urgent": true,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "fe5c6370bafaac6712f4b168086df3af34b3dd118464cf0e31dbfb47e38da854",
+    "retrieved_at": "2026-10-01T22:15:04.459112+00:00"
+  },
+  {
+    "id": "rent",
+    "name": "Emergency fund: rent support",
+    "category": [
+      "housing"
+    ],
+    "summary": "A rent-assistance pathway within the Basic Needs Emergency Fund.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/finances/emergency-fund",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "exhausted",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Available financial resources exhausted",
+        "kind": "policy"
+      },
+      {
+        "field": "recent_award",
+        "operator": "equals",
+        "value": "no",
+        "required": true,
+        "label": "No emergency fund award in the past two years",
+        "kind": "policy"
+      },
+      {
+        "field": "unexpected",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Unexpected or emergency expense",
+        "kind": "policy"
+      },
+      {
+        "field": "housing_type",
+        "operator": "equals",
+        "value": "rent",
+        "required": true,
+        "label": "Help with rent",
+        "kind": "routing"
+      }
+    ],
+    "steps": [
+      "Review the fund requirements and response timeline.",
+      "Ask staff what supporting information your situation requires.",
+      "Complete the assistance form linked on the official page."
+    ],
+    "documents": [],
+    "caveat": "One fund, not a separate award. Responses may take 7\u201310 weekdays; support is not guaranteed.",
+    "priority": 10,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "f4907bd5f7e0dccad703aae94c105f87437a8b151e10579b25c4038b8158d1ad",
+    "retrieved_at": "2026-10-01T22:15:04.477458+00:00"
+  },
+  {
+    "id": "deposit",
+    "name": "Emergency fund: housing deposit",
+    "category": [
+      "housing"
+    ],
+    "summary": "Deposit assistance through the same emergency fund.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/finances/emergency-fund",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "exhausted",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Available financial resources exhausted",
+        "kind": "policy"
+      },
+      {
+        "field": "recent_award",
+        "operator": "equals",
+        "value": "no",
+        "required": true,
+        "label": "No emergency fund award in the past two years",
+        "kind": "policy"
+      },
+      {
+        "field": "unexpected",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Unexpected or emergency expense",
+        "kind": "policy"
+      },
+      {
+        "field": "housing_type",
+        "operator": "equals",
+        "value": "deposit",
+        "required": true,
+        "label": "Help with a housing deposit",
+        "kind": "routing"
+      }
+    ],
+    "steps": [
+      "Review fund requirements.",
+      "Prepare a copy of your lease agreement.",
+      "Complete the official assistance form."
+    ],
+    "documents": [
+      "Lease agreement"
+    ],
+    "caveat": "Part of the Basic Needs Emergency Fund; do not assume multiple awards.",
+    "priority": 9,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "f4907bd5f7e0dccad703aae94c105f87437a8b151e10579b25c4038b8158d1ad",
+    "retrieved_at": "2026-10-01T22:15:04.477458+00:00"
+  },
+  {
+    "id": "food-award",
+    "name": "Emergency fund: food assistance",
+    "category": [
+      "food"
+    ],
+    "summary": "Food-cost support when the pantry is not sufficient.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/finances/emergency-fund",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "exhausted",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Available financial resources exhausted",
+        "kind": "policy"
+      },
+      {
+        "field": "recent_award",
+        "operator": "equals",
+        "value": "no",
+        "required": true,
+        "label": "No emergency fund award in the past two years",
+        "kind": "policy"
+      },
+      {
+        "field": "unexpected",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Unexpected or emergency expense",
+        "kind": "policy"
+      },
+      {
+        "field": "food_type",
+        "operator": "equals",
+        "value": "award",
+        "required": true,
+        "label": "Food needs beyond pantry support",
+        "kind": "routing"
+      },
+      {
+        "field": "food_exception",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Additional CalFresh or extenuating-circumstance conditions require staff review",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review the food-specific criteria on the official page.",
+      "Discuss the CalFresh or exceptional-circumstance requirements with staff.",
+      "Use the official assistance form."
+    ],
+    "documents": [],
+    "caveat": "This is an emergency-fund pathway. Additional food-specific conditions remain unconfirmed.",
+    "priority": 8,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "f4907bd5f7e0dccad703aae94c105f87437a8b151e10579b25c4038b8158d1ad",
+    "retrieved_at": "2026-10-01T22:15:04.477458+00:00"
+  },
+  {
+    "id": "emergency-fund",
+    "name": "Basic Needs Emergency Fund",
+    "category": [
+      "financial"
+    ],
+    "summary": "One-time help for unanticipated basic-needs expenses.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/finances/emergency-fund",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "exhausted",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Available financial resources exhausted",
+        "kind": "policy"
+      },
+      {
+        "field": "recent_award",
+        "operator": "equals",
+        "value": "no",
+        "required": true,
+        "label": "No emergency fund award in the past two years",
+        "kind": "policy"
+      },
+      {
+        "field": "unexpected",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Unexpected or emergency expense",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Read the full requirements and timeline.",
+      "Confirm documentation with the Basic Needs team.",
+      "Submit the official assistance form."
+    ],
+    "documents": [],
+    "caveat": "A response can take 7\u201310 weekdays. Meeting published criteria does not guarantee funding.",
+    "priority": 10,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "f4907bd5f7e0dccad703aae94c105f87437a8b151e10579b25c4038b8158d1ad",
+    "retrieved_at": "2026-10-01T22:15:04.477458+00:00"
+  },
+  {
+    "id": "housing-search",
+    "name": "Housing search resources",
+    "category": [
+      "housing"
+    ],
+    "summary": "Self-guided resources for finding housing.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/housing/housing-search-support",
+    "rules": [
+      {
+        "field": "housing_type",
+        "operator": "equals",
+        "value": "search",
+        "required": true,
+        "label": "Looking for housing",
+        "kind": "routing"
+      }
+    ],
+    "steps": [
+      "Open the housing search resource guide.",
+      "Compare on-campus housing and Cal Rentals options."
+    ],
+    "documents": [],
+    "caveat": "The Basic Needs team says it cannot provide direct housing-search support.",
+    "priority": 8,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "732f19de90a38af525263311a76cdace8461d2dcb7876cc22b807b492f76b6d0",
+    "retrieved_at": "2026-10-01T22:15:04.479530+00:00"
+  },
+  {
+    "id": "tenant",
+    "name": "Tenant-rights resources",
+    "category": [
+      "housing"
+    ],
+    "summary": "Official referrals for landlord and tenant concerns.",
+    "source_url": "https://basicneeds.berkeley.edu/get-support/housing/tenants-rights-other-resources",
+    "rules": [
+      {
+        "field": "housing_type",
+        "operator": "equals",
+        "value": "legal",
+        "required": true,
+        "label": "A landlord or tenant-rights issue",
+        "kind": "routing"
+      }
+    ],
+    "steps": [
+      "Review the legal-service options on the official page.",
+      "Contact the appropriate service about your situation and deadlines."
+    ],
+    "documents": [],
+    "caveat": "This is a referral directory, not legal advice. Each provider has its own intake requirements.",
+    "priority": 9,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "c594927f5ea096e1699f111376474a32cec11a103475a1b2dc812db57b5cf557",
+    "retrieved_at": "2026-10-01T22:15:08.116927+00:00"
+  },
+  {
+    "id": "dsp-tech",
+    "name": "DSP Student Technology Grant",
+    "category": [
+      "technology"
+    ],
+    "summary": "Funding consideration for disability-related assistive equipment.",
+    "source_url": "https://dsp.berkeley.edu/financial-aid",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "disability",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Disability-related assistive technology need",
+        "kind": "policy"
+      },
+      {
+        "field": "fafsa",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "FAFSA completed",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review the technology grant information on the DSP page.",
+      "Contact your DSP specialist about equipment needs and the application."
+    ],
+    "documents": [],
+    "caveat": "This grant is not emergency funding. The award is limited to assistive technology.",
+    "priority": 9,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "bed426bacbda94ac3e14d98b469e6bd3cce3edafa3d69101e682372b80e9fae5",
+    "retrieved_at": "2026-10-01T22:15:08.177017+00:00"
+  },
+  {
+    "id": "financial-wellness",
+    "name": "Financial wellness counseling",
+    "category": [
+      "financial"
+    ],
+    "summary": "Financial-aid guidance and prevention-focused support.",
+    "source_url": "https://basicneeds.berkeley.edu/about-us/services-and-resources",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review financial wellness services.",
+      "Ask the Basic Needs Center about financial-aid counseling opportunities."
+    ],
+    "documents": [],
+    "caveat": "Counseling is not a promise of emergency funding.",
+    "priority": 4,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "35f1fa8b9175c9786eeb80530415ac89d99201401e6c5fbf37f2a4a159bf429c",
+    "retrieved_at": "2026-10-01T22:15:04.467873+00:00"
+  },
+  {
+    "id": "loan",
+    "name": "Short-term emergency loan",
+    "category": [
+      "financial"
+    ],
+    "summary": "An education-related emergency loan that must be repaid.",
+    "source_url": "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/loans/short-term-emergency-loan/",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "loan_conditions",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Registration, holds, debt and loan-type conditions require official review",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review the applicable loan type, repayment deadline and terms.",
+      "Ask Cal Student Central about any restrictions before borrowing.",
+      "If appropriate, apply through the official CalCentral instructions."
+    ],
+    "documents": [],
+    "caveat": "This is debt, not a grant. Approval is not guaranteed; review generally takes 2\u20133 business days. Verify current repayment terms.",
+    "priority": 3,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "0eb425597aa5692e4c35fb58d6311d5a41648540e405ca60080c073287de7035",
+    "retrieved_at": "2026-10-01T22:15:08.258201+00:00"
+  },
+  {
+    "id": "eop",
+    "name": "Educational Opportunity Program",
+    "category": [
+      "financial"
+    ],
+    "summary": "Counseling and campus referrals for students navigating barriers.",
+    "source_url": "https://eop.berkeley.edu/",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "eop_scope",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "EOP participant scope needs confirmation with staff",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review EOP services and participant information.",
+      "Schedule an appointment to discuss support and referrals."
+    ],
+    "documents": [],
+    "caveat": "A counseling referral, not a funding decision. Ask EOP whether its services fit your circumstances.",
+    "priority": 2,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "56e19d90276ed49caafec1564974267a4e29871b982ee2a9e624696d787ac1f1",
+    "retrieved_at": "2026-10-01T22:15:08.339913+00:00"
+  },
+  {
+    "id": "scholarships",
+    "name": "OURS scholarship advising",
+    "category": [
+      "financial"
+    ],
+    "summary": "Explore competitive scholarships and fellowships for future planning.",
+    "source_url": "https://scholarships.berkeley.edu/",
+    "rules": [
+      {
+        "field": "enrolled",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Current Berkeley enrollment",
+        "kind": "policy"
+      },
+      {
+        "field": "undergraduate_scope",
+        "operator": "equals",
+        "value": "yes",
+        "required": true,
+        "label": "Undergraduate or recent undergraduate alumni scope needs confirmation",
+        "kind": "policy"
+      }
+    ],
+    "steps": [
+      "Review scholarship opportunities and their deadlines.",
+      "Contact the OURS office for advising."
+    ],
+    "documents": [],
+    "caveat": "Not emergency funding. Each scholarship has its own requirements and selection process.",
+    "priority": 1,
+    "urgent": false,
+    "effective_date": null,
+    "policy_version": "2026-10-01.1",
+    "review_status": "SOURCE_CHECKED",
+    "source_hash": "3eb3a96803eb4effbea4bb5922636d537a845e9e174274e3370296a4379deec5",
+    "retrieved_at": "2026-10-01T22:15:08.650173+00:00"
+  }
+]
